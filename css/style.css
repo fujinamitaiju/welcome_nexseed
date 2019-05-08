@@ -1,3 +1,13 @@
+.fixed{
+	position: fixed;
+	width: 100%;
+	margin-top: -70px;
+	/*z-indexを使って回り込みを防ぐ*/
+}
+#margin-for-fixed{
+	margin-top: 70px;
+}
+
 header{
 	display: flex;
 	justify-content:  space-between;
@@ -176,4 +186,23 @@ textarea{
 	background-color: #fff;
 	color: #1dace0;
 	transition-duration: 500ms; /*hover時500msかけて実行*/
+}
+
+footer{
+	display: flex;
+	justify-content: space-between;
+	background-color: #233f51;
+	color: #FFF;
+	align-items: center;
+	font-size: 18px;
+	padding: 5px;
+}
+footer .footer-right{
+	margin-right: 80px;
+}
+
+footer p{
+	display: flex;
+
+
 }
