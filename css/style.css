@@ -1,0 +1,179 @@
+header{
+	display: flex;
+	justify-content:  space-between;
+	background-color: #1dace0;
+	color: #fff;
+	font-size: 18px;
+	padding: 5px 0;
+}
+
+.icon{
+	display: flex;
+	align-items: center;
+	margin-left: 80px;
+}
+.icon img{
+	height: 60px;
+}
+
+.icon  .name strong{
+	color: #eae51f;
+}
+
+.header-right{
+	display: flex;
+	align-items: center;
+	margin-right: 80px;
+}
+.header-right li:first-child{
+	margin-right: 30px;
+}
+
+.welcome{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	background-image: url(../img/background1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100vh;
+	color: #fff; 
+}
+.title{
+	font-size: 64px;
+}
+
+.guideline{
+	margin-top: 50px;
+	font-size: 28px;
+	font-weight: bold;
+	/*700と一緒*/
+}
+.guideline li{
+	margin-top: 16px;
+}
+.guideline li:not(:first-child){
+	margin-top: 16px;
+}
+
+.btn-group{
+	margin-top: 60px;
+}
+.btn{
+	height: 55px;
+	width: 170px;
+	margin-left: 120px;
+	cursor: pointer;/*ホバーしたタイミングでポインタにしてくれる*/
+	color: #fff;
+	font-weight: bold;
+	font-size: 28px;
+	border-radius: 10px;
+}
+.btn:first-child{
+	margin-left: 0;
+}
+
+.register{/**/
+	background-color: rgba(29,172,224,.5);
+	border: 3px solid rgba(29,172,224,.3);;
+}
+.register:hover{
+	background-color: rgb(29,172,224);
+}
+.login{
+	background-color: rgba(236,227,35,.5);
+	border: 3px solid rgba(236,227,35,.3);
+}
+.login:hover{
+	background-color: rgb(236,227,35);
+}
+
+
+.curriculum{
+	margin-top: 50px;
+}
+.sub-title{
+	text-align: center;
+	font-size: 36px;
+}
+.img-box{
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+    text-align: center;
+
+}
+
+.img-box li{
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	margin-right: 60px; /*一旦文字と画像を合わせ、中央に寄せてからmarginで余白を取る*/
+}
+.img-box li:last-child{
+	margin-right: 0;
+}
+.img-box img{
+	width: 300px;
+	height: 300px;
+}
+.img-box li span{
+	font-size: 24px;
+	margin-top: 20px;
+}
+
+.contact{
+	display: flex;/*contactにも掛ける*/
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	margin-top: 50px;
+	height: 350px;
+	background-color: #eaf2f4;
+	padding-top: 50px;
+
+}
+.contact h2{
+	margin-bottom: 50px;
+}
+.contact .form{
+	display: flex;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+
+.form-left .name{
+	margin-bottom: 30px;
+}
+
+.name,.email{
+	margin-right: 50px; 
+	height: 50px;
+	width: 400px;
+	box-sizing: border-box;
+}
+.form .inquiry{
+	height: 130px;
+	width: 400px;
+	box-sizing: border-box;
+}
+textarea{
+	height: 60px;
+	width: 200px;
+}
+.contact button{
+	color: #FFF;
+	font-size: 24px;
+	background-color: #1dace0;
+	border: 3px solid #1dace0;
+	border-radius: 10px;
+	padding : 15px 30px;
+
+}
+.contact button:hover{
+	background-color: #fff;
+	color: #1dace0;
+	transition-duration: 500ms; /*hover時500msかけて実行*/
+}
