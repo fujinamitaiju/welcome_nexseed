@@ -145,9 +145,7 @@ header{
 	padding-top: 50px;
 
 }
-.contact h2{
-	margin-bottom: 50px;
-}
+
 .contact .form{
 	display: flex;
 	justify-content: center;
@@ -155,11 +153,14 @@ header{
 }
 
 .form .name{
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 }
 
+.form-left{
+	height: 130px;
+}
 .form .name,
-.form.email{ 
+.form .email{ 
 	height: 50px;
 	width: 400px;
 	box-sizing: border-box;
