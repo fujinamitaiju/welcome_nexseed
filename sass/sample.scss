@@ -1,0 +1,370 @@
+$w80: 80%;
+$sb: #1dace0;
+$white: #fff;
+
+@mixin size($height,$width){
+	height: $height;
+	width: $width;
+}
+@mixin color($bc,$c){
+	background-color: $bc;
+	color: $c;
+}
+@mixin flex($flex,$justy){
+	display: $flex;
+	justify-content: $justy;
+}
+
+@mixin font($fs,$fw){
+	font-size: $fs;
+	font-weight: $fw;
+}
+
+@mixin margin($t,$r,$b,$l){
+	margin-top: $t;
+	margin-right: $r;
+	margin-bottom: $b;
+	margin-left: $l;
+}
+@mixin flexbox{
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+@mixin flexitems{
+	display: flex;
+	align-items: center;
+}
+
+@mixin media ($width:1280px){
+	@media only screen and (max-width: $width){
+		@content;
+	}
+
+}
+
+
+.fixed{
+	position: fixed;
+	width: 100%;
+	@include margin(70px,0,0,0);
+	margin-top: -70px;
+	/*z-indexを使って回り込みを防ぐ*/
+}
+#margin-for-fixed{
+	margin-top: 70px;
+}
+
+body{
+	@include media(480px){
+		min-width: 375px;
+	}
+}
+
+header{
+	@include flex(flex,space-between); 
+	//justify-content:  space-between;
+	//background-color: #1dace0;
+	//color: #fff;
+	@include color($sb,#fff);
+	@include font(18px,0);
+	//font-size: 18px;
+	padding: 5px 0;
+}
+
+.icon{
+	@include media(480px){
+		margin-left: 2px;
+	}
+	@include flexitems;
+	//display: flex;
+	//align-items: center;
+	margin-left: 80px;
+	img{
+		height: 60px;
+	}
+	.name strong{
+		color: #eae51f;
+	}
+	span{
+		@include media(480px){
+			display: none;
+		}
+	}
+}
+.header-right{
+	@include media(480px){
+		display: none;
+	}
+	@include flexitems;
+	//display: flex;
+	//align-items: center;
+	margin-right: 80px;
+	li:first-child{
+		margin-right: 30px;
+	}
+}
+.welcome{
+	@include flexbox;
+	//display: flex;
+	flex-direction: column;
+	//justify-content: center;
+	//text-align: center;
+	background-image: url(../img/background1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100vh;
+	color: #fff; 
+}
+.title{
+	@include font(64px,0);
+	@include media(480px){
+		display: none;
+	}
+}
+
+.guideline{
+	@include media(480px){
+		margin-top: 30px;
+		@include font(24px,normal);
+	}
+	@include font(28px,bold);
+	margin-top: 50px;
+	//font-size: 28px;
+	//font-weight: bold;
+	/*700と一緒*/
+	li{
+		margin-top: 16px;
+		&:not(:first-child){
+			margin-top: 16px;
+		}
+	}
+}
+.btn-group{
+	margin-top: 60px;
+	@include media(480px){
+		@include flexitems;
+		//display: flex;
+		flex-flow: column nowrap;
+		//align-items: center;
+		margin-top: 40px;
+	}
+}
+.btn{
+	@include media(480px){
+		@include font(24px,bold);
+		@include margin(40px,0,0,0);
+		@include size(48px,40%);
+		//margin-left: 0;
+		//font-weight: bold;
+		//font-size: 24px;
+		//margin-top: 40px;
+		//height: 48px;
+		//width: 40%;
+		&:first-child{
+			margin-top: 0;
+		}
+
+	}
+	@include size(55px,170px);
+	//height: 55px;
+	//width: 170px;
+	margin-left: 120px;
+	cursor: pointer;/*ホバーしたタイミングでポインタにしてくれる*/
+	color: #fff;
+	@include font(28px,bold);
+	//font-weight: bold;
+	//font-size: 28px;
+	border-radius: 10px;
+	&:first-child{
+		margin-left: 0;
+	}
+}
+.register{/**/
+	background-color: rgba(29,172,224,.5);
+	border: 3px solid rgba(29,172,224,.3);;
+	&:hover{
+		background-color: rgb(29,172,224);
+	}
+}
+.login{
+	background-color: rgba(236,227,35,.5);
+	border: 3px solid rgba(236,227,35,.3);
+	&:hover{
+		background-color: rgb(236,227,35);
+	}
+}
+.curriculum{
+	margin-top: 50px;
+}
+.sub-title{
+	text-align: center;
+	font-size: 36px;
+}
+.img-box{
+	@include media{
+		justify-content: space-around;
+	}
+	@include media(960px){
+		flex-wrap: wrap;
+		align-content: space-around;
+	}
+	margin-top: 50px;
+	@include flexbox;
+	/* display: flex;
+	justify-content: center;
+	    text-align: center; */
+	li{
+		@include media{
+			margin-right: 30px;
+		}
+		@include media(960px){
+			@include margin(30px,0,0,0);
+		}
+		@include flex(flex,center);
+		//display: flex;
+		//text-align: center;
+		flex-direction: column;
+		margin-right: 60px; /*一旦文字と画像を合わせ、中央に寄せてからmarginで余白を取る*/
+		&:last-child{
+			margin-right: 0;
+		}
+		span{
+			font-size: 24px;
+			margin-top: 20px;
+		}
+    }
+    img{
+    	@include size(300px,300px);
+		//width: 300px;
+		//height: 300px;
+	}   
+}
+%nameemail{ 
+	@include size(50px,400px);
+	//height: 50px;
+	//width: 400px;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+.contact{
+	@include media(960px){
+		height: 100%;
+		padding: 40px 20px;
+	}
+	@include flexbox;
+	//display: flex;/*contactにも掛ける*/
+	flex-direction: column;
+	//justify-content: center;
+	//text-align: center;
+	margin-top: 50px;
+	height: 350px;
+	background-color: #eaf2f4;
+	padding-top: 50px;
+	.form{
+		@include media(960px){
+        	flex-flow: column nowrap;
+			@include margin(30px,30px,0,0);
+				width: $w80;
+			}
+		@include flex(flex,center);
+		//display: flex;
+		//justify-content: center;
+		@include margin(50px,0,40px,0);
+		//margin:50px 0 40px;
+		.name{
+			margin-bottom: 30px;
+				@extend %nameemail;
+		}
+		.email{
+			@extend %nameemail;
+			@include media(960px){
+					width: $w80;
+				}
+		}
+		.inquiry{
+			@include size(130px,400px);
+			//height: 130px;
+			//width: 400px;
+			box-sizing: border-box;
+			margin-left: 40px;
+			@include media(960px){
+					width: $w80;
+			}
+		}
+	}
+	button{
+		@include media(960px){
+			font-size: 20px;
+			padding: 5px 40px;
+			box-sizing: border-box;
+		}
+		font-size: 24px;
+		@include color($sb,#fff);
+		//color: #FFF;
+		//background-color: $sb;
+		border: 3px solid $sb;
+		border-radius: 10px;
+		padding : 15px 30px;
+		margin-bottom: 20px;
+		&:hover{
+			@include color(#fff,$sb);
+			//background-color: #fff;
+			//color: #1dace0;
+			transition-duration: 500ms; /*hover時500msかけて実行*/
+		}
+	}
+}
+.form-left{
+	height: 130px;
+	@include media{
+		@include margin(0,0,30px,0);
+	}
+}
+
+
+//////////////////まとめるものはまとめる
+textarea{
+	@include size(60px,200px);
+	//height: 60px;
+	//width: 200px;
+}
+
+footer{
+	@include media(480px){
+		justify-content: center;
+		.icon{
+			display: none;
+		}
+		.footer-right{
+			margin-right: 0;
+			align-items: center;
+			}
+	}
+	@include flex(flex,spase-between);
+	//display: flex;
+	//justify-content: space-between;
+	align-items: center;
+	@include color(#233f51,#fff);
+	//background-color: #233f51;
+	//color: #FFF;
+	font-size: 18px;
+	padding: 5px;
+	.footer-right{
+		margin-right: 80px;
+	}
+	p{
+		display: flex;
+	}
+}
+
+
+
+
+
+
+
+
+
+

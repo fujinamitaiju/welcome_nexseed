@@ -214,7 +214,7 @@ footer p{
 /* 小型PC用 */
 @media screen and (max-width: 1280px){
 	.img-box{
-		justify-content: space-around;/* 余白をもって等間隔に配置される。起点・終点との間にも間隔が生じる。 */
+		justify-content: space-around;
 	}
 	.img-box li{
 		margin-right: 30px;
